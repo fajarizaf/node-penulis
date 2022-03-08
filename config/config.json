@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "jvsy0cv7xondxqfj",
+    "password": "",
+    "database": "vjgt9pquv3ly7e4x",
+    "host": "dno6xji1n8fm828n.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "password",
+    "database": "skar_tes",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "password",
+    "database": "skar",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
