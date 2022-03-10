@@ -8,7 +8,7 @@ const cors = require('cors')
 
 
 app.use(express.static('public'))
-app.use(cors({credentials:true, origin:'https://www.penulis.site'}))
+app.use(cors({credentials:true, origin:'http://www.penulis.site'}))
 app.use(bodyParser.json())
 app.use(cookieParser())
 
