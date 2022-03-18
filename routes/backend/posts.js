@@ -7,7 +7,7 @@ const { verifyToken } = require('../../middleware/verifyToken')
 const posts = app => {
     
     // get post by:idpost
-    app.get('/api/admin/post/:id', async (req, res) => {
+    app.get('/api/admin/post/:id', verifyToken , async (req, res) => {
         response = await c.getPost(req.params)
         res.json(response)
     })
