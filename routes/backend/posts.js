@@ -31,7 +31,7 @@ const posts = app => {
     })
 
     // Update
-    app.put('/api/admin/post', async (req, res) => {
+    app.put('/api/admin/post', verifyToken , async (req, res) => {
         let process = await c.updatePost(req.body)
         if(process.status == 'success') {
             let id = process.id
