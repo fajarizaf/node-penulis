@@ -8,7 +8,7 @@ const cors = require('cors')
 
 
 app.use(express.static('public'))
-app.use(cors({credentials:true, origin:'http://localhost:3000'}))
+app.use(cors({credentials:true, origin:['http://localhost:3000','https://penulis-dev.herokuapp.com']}))
 app.use(bodyParser.json())
 app.use(cookieParser())
 
