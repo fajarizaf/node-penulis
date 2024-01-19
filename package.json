@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "\"Membuat endpoint app dengan api\"",
   "main": "server.js",
-  "type": "module",
   "scripts": {
     "start": "nodemon server.js"
   },
