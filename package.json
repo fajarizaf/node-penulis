@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "\"Membuat endpoint app dengan api\"",
   "main": "server.js",
+  "engines": {
+    "node": "16.14.2"
+  },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "keywords": [
     "slick-api"
