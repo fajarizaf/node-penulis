@@ -15,6 +15,7 @@ app.use(bodyParser.json())
 app.use(cookieParser())
 
 // public routes
+require('./routes/welcome')(app)
 require('./routes/posts')(app)
 require('./routes/upload')(app)
 require('./routes/auth')(app)
