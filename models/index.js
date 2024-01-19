@@ -2,24 +2,25 @@
 
 const fs = require('fs');
 const path = require('path');
+const pg = require('pg');
+
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
-const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
 let sequelize;
-if (process.env.DATABASE_URL) {
-  // the application is executed on Heroku 
-  sequelize = new Sequelize(process.env.DATABASE_URL, {
-    dialect:  'mysql',
-    protocol: 'mysql',
-    logging:  true //false
-  });
-} else {
-  // the application is executed on the local machine
-  sequelize = new Sequelize("mysql://jvsy0cv7xondxqfj:e7wp2cn265n6q1vg@dno6xji1n8fm828n.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/vjgt9pquv3ly7e4x");
-}
+
+// connect to db vercel app
+sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect:  'postgres',
+  dialectModule: pg,
+  dialectOptions: {
+    ssl: {
+        require: true,
+        rejectUnauthorized: false
+    }
+  }
+});
 
 fs
   .readdirSync(__dirname)

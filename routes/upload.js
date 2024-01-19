@@ -15,7 +15,7 @@ const upload = app => {
       fs.rename(TempPathFile, targetPathUrl, err => {
         res.status(200).json({
           uploaded: true,
-          url: `https://node-penulis.herokuapp.com/uploads/${TempFile.originalFilename}`
+          url: `${process.env.BASE_URL}/uploads/${TempFile.originalFilename}`
         })
         if(err) return console.log(err)
       })

@@ -24,11 +24,11 @@ exports.Login = (data) => new Promise((resolve, reject) => {
                 const emailuser = respond[0].emailuser
 
                 // generate access token
-                const accessToken = jwt.sign({iduser,nameuser,emailuser}, process.env.ACCESS_TOKEN_SECRET, {
+                const accessToken = jwt.sign({iduser,nameuser,emailuser}, 'asdasd3324sddfas23asdsgghzxvsdfaswrwrrwrwer', {
                     expiresIn: '20s'
                 })
                 // generate refresh token
-                const refreshToken = jwt.sign({iduser,nameuser,emailuser}, process.env.REFRESH_TOKEN_SECRET, {
+                const refreshToken = jwt.sign({iduser,nameuser,emailuser}, '456wrwsdfrthdffghxcbxdfgeertetxcvcvsdfgeerrt', {
                     expiresIn: '1d'
 
                 })
@@ -70,7 +70,7 @@ exports.Login = (data) => new Promise((resolve, reject) => {
             convertToJson({
                 respond: {
                     status: 'failed',
-                    response: 'Email tidak ditemukan'
+                    response: e.message
                 }
             })
         )
@@ -136,7 +136,7 @@ exports.rtoken = (data) => new Promise((resolve, reject) => {
                     const emailuser = res[0].emailuser
 
                     // generate new access token
-                    const accessToken = jwt.sign({iduser,nameuser,emailuser}, process.env.ACCESS_TOKEN_SECRET, {
+                    const accessToken = jwt.sign({iduser,nameuser,emailuser}, 'asdasd3324sddfas23asdsgghzxvsdfaswrwrrwrwer', {
                         expiresIn: '20s'
                     })
                     resolve(convertToJson({

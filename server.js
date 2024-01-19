@@ -30,8 +30,8 @@ sequelize.sync()
     console.log('Server udah running sekarang')
   })
 })
-.catch(() => {
-  console.log("Ada yang salah pada saat proses sync()")
+.catch((e) => {
+  console.log("Ada yang salah pada saat proses sync() error:"+e.message)
 })
 
 
