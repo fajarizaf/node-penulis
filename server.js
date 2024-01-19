@@ -35,4 +35,6 @@ sequelize.sync()
   console.log("Ada yang salah pada saat proses sync() error:"+e.message)
 })
 
+module.exports = app
+
 
