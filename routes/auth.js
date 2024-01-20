@@ -6,6 +6,14 @@ const user = require('../controllers/user')
 
 const auth = app => {
 
+    app.get('/set/cookie', async (req,res) => {
+        res.cookie('refreshToken', '8234923832493248234234', {
+            httpOnly: true,
+            maxAge: 24 * 60 * 60 * 1000
+        })
+        res.json({status: "success"})
+    })
+
     // Login
     app.post('/api/auth/login', async (req, res) => {
         let process = await authentication.Login(req.body)
@@ -14,7 +22,6 @@ const auth = app => {
         if(process.respond.status == 'success') {
             res.cookie('refreshToken', process.refreshToken.value, {
                 httpOnly: true,
-                secure:true,
                 maxAge: 24 * 60 * 60 * 1000
             })
         }
