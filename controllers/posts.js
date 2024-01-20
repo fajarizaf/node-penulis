@@ -95,7 +95,7 @@ exports.getPost = (data) => new Promise((resolve, reject) => {
         } 
     })
     .catch((e) => { 
-        resolve(convertToJson({status:'failed'}))
+        resolve(convertToJson({status:'failed', error: e}))
         console.log(e)
     })
 })
