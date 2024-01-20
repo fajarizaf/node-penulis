@@ -56,21 +56,9 @@ exports.getPostUser = (data) => new Promise((resolve, reject) => {
 exports.getPost = (data) => new Promise((resolve, reject) => {
     Posts.findOne({ 
         where: { id: parseInt(data.id) },
-        attributes  : [
-            ['id','idpost'],
-            'titlepost',
-            'contentpost',
-            'tagpost',
-            'slugpost',
-            ['updatedAt','datepost']
-        ],
         include: [
             { 
                 model: Catposts, as: 'categori', 
-                attributes : [
-                    'id', 
-                    ['namecat']
-                ] 
             },
             { 
                 model: Configposts, as: 'config', 
@@ -95,7 +83,7 @@ exports.getPost = (data) => new Promise((resolve, reject) => {
         } 
     })
     .catch((e) => { 
-        resolve(convertToJson({status:'failed', error: e.message}))
+        resolve(convertToJson({status:'failed', error: e}))
     })
 })
 
