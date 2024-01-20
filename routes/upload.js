@@ -1,7 +1,3 @@
-const multiparty = require('connect-multiparty')
-const tmpimages = multiparty({uploadDir:'./images'})
-const path = require('path')
-const fs = require('fs')
 
 const upload = app => {
 
