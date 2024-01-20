@@ -21,7 +21,13 @@ module.exports = (sequelize, DataTypes) => {
         }
     },
     slugpost: DataTypes.STRING
-  }, {});
+  },{
+    defaultScope: { 
+      include: [{ model: sequelize.models.catposts, as: 'categori' }],
+      include: [{ model: sequelize.models.configposts, as: 'config' }],
+    },
+  },
+  {});
   posts.associate = function(models) {
     posts.belongsTo(models.catposts, {foreignKey: 'catpost', as: 'categori'})
     posts.belongsTo(models.users, {foreignKey: 'authorpost', as: 'author'})
