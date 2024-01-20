@@ -25,7 +25,7 @@ exports.Login = (data) => new Promise((resolve, reject) => {
 
                 // generate access token
                 const accessToken = jwt.sign({iduser,nameuser,emailuser}, 'asdasd3324sddfas23asdsgghzxvsdfaswrwrrwrwer', {
-                    expiresIn: '1d'
+                    expiresIn: '20s'
                 })
                 // generate refresh token
                 const refreshToken = jwt.sign({iduser,nameuser,emailuser}, '456wrwsdfrthdffghxcbxdfgeertetxcvcvsdfgeerrt', {
@@ -151,7 +151,7 @@ exports.rtoken = (data) => new Promise((resolve, reject) => {
     .catch((e) => {
         resolve(
             convertToJson(
-                {status: 'failed'}
+                {status: 'failed', error: e.message}
             )
         )
         console.log(e)
