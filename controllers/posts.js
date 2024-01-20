@@ -55,7 +55,7 @@ exports.getPostUser = (data) => new Promise((resolve, reject) => {
 // controller admin get posts by:id
 exports.getPost = (data) => new Promise((resolve, reject) => {
     Posts.findOne({ 
-        where: { id: data.id },
+        where: { id: parseInt(data.id) },
         attributes  : [
             ['id','idpost'],
             'titlepost',
@@ -96,7 +96,6 @@ exports.getPost = (data) => new Promise((resolve, reject) => {
     })
     .catch((e) => { 
         resolve(convertToJson({status:'failed', error: e}))
-        console.log(e)
     })
 })
 
