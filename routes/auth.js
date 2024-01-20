@@ -18,7 +18,7 @@ const auth = app => {
     app.post('/api/auth/login', async (req, res) => {
         let process = await authentication.Login(req.body)
 
-        res.cookie('refreshToken', process.refreshToken.value, {
+        res.cookie('refreshToken', '023923023983242392384', {
             httpOnly: true,
             maxAge: 24 * 60 * 60 * 1000
         })
