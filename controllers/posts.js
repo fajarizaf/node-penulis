@@ -194,7 +194,7 @@ exports.createPost = (data) => new Promise((resolve, reject) => {
 exports.getPost_id = (data) => new Promise((resolve, reject) => {
     Posts.findAll({
         attributes  : [
-            ['id','idpost'],
+            ['id','idpostss'],
             'titlepost',
             'contentpost',
             'tagpost',
