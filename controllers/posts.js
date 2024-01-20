@@ -63,15 +63,6 @@ exports.getPost = (data) => new Promise((resolve, reject) => {
             'tagpost',
             'slugpost',
             ['updatedAt','datepost']
-        ],
-        include: [
-            { 
-                model: Configposts, as: 'config', 
-                attributes : [
-                    'name', 
-                    'value',
-                ] 
-            }
         ]
     })
     .then((respond) => { 
