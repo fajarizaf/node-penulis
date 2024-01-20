@@ -69,7 +69,7 @@ exports.getPost = (data) => new Promise((resolve, reject) => {
                 model: Catposts, as: 'categori', 
                 attributes : [
                     'id', 
-                    ['namecat','name']
+                    ['namecat']
                 ] 
             },
             { 
