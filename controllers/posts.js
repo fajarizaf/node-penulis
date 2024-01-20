@@ -55,15 +55,7 @@ exports.getPostUser = (data) => new Promise((resolve, reject) => {
 // controller admin get posts by:id
 exports.getPost = (data) => new Promise((resolve, reject) => {
     Posts.findOne({ 
-        where: { id: parseInt(data.id) },
-        attributes  : [
-            ['id','idpost'],
-            'titlepost',
-            'contentpost',
-            'tagpost',
-            'slugpost',
-            ['updatedAt','datepost']
-        ]
+        where: { id: parseInt(data.id) }
     })
     .then((respond) => { 
         if(respond != null) {
