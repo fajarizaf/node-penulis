@@ -54,7 +54,7 @@ exports.getPostUser = (data) => new Promise((resolve, reject) => {
 
 // controller admin get posts by:id
 exports.getPost = (data) => new Promise((resolve, reject) => {
-    Posts.findAll({ 
+    Posts.findOne({ 
         where: { id: parseInt(data.id) },
         attributes  : [
             ['id','idpost'],
@@ -82,6 +82,7 @@ exports.getPost = (data) => new Promise((resolve, reject) => {
         ]
     })
     .then((respond) => { 
+        
         if(respond != null) {
             let data = convertToJson(respond)
             let config = {}
@@ -95,7 +96,7 @@ exports.getPost = (data) => new Promise((resolve, reject) => {
         } 
     })
     .catch((e) => { 
-        resolve(convertToJson({status:'failed', error: e}))
+        resolve(convertToJson({status:'failed', error: e.message}))
     })
 })
 

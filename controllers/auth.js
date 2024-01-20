@@ -25,7 +25,7 @@ exports.Login = (data) => new Promise((resolve, reject) => {
 
                 // generate access token
                 const accessToken = jwt.sign({iduser,nameuser,emailuser}, 'asdasd3324sddfas23asdsgghzxvsdfaswrwrrwrwer', {
-                    expiresIn: '20s'
+                    expiresIn: '1d'
                 })
                 // generate refresh token
                 const refreshToken = jwt.sign({iduser,nameuser,emailuser}, '456wrwsdfrthdffghxcbxdfgeertetxcvcvsdfgeerrt', {
