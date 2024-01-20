@@ -12,7 +12,7 @@ exports.verifyToken = (req,res,next) => {
             jwt.verify(token, 'asdasd3324sddfas23asdsgghzxvsdfaswrwrrwrwer', (err, decoded) => {
                 if(err) {
                     res.json({status:"forbidden"})
-                    console.log(err)
+                    console.log('kena forbidden disini')
                 } else {
                     req.email = decoded.email
                     next()
