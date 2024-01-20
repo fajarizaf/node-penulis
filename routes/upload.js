@@ -9,17 +9,12 @@ const upload = app => {
   
     var TempFile = req.files.upload
     var TempPathFile = TempFile.path
-  
-    const targetPathUrl = path.join(__dirname,"../public/uploads/"+TempFile.name)
-    if(path.extname(TempFile.originalFilename).toLowerCase() === ".png" || ".jpg") {
-      fs.rename(TempPathFile, targetPathUrl, err => {
-        res.status(200).json({
-          uploaded: true,
-          url: `${process.env.BASE_URL}/uploads/${TempFile.originalFilename}`
-        })
-        if(err) return console.log(err)
-      })
-    }
+    
+    res.status(200).json({
+      uploaded: true,
+      url: `${process.env.BASE_URL}/uploads/${TempFile.originalFilename}`
+    })
+
   })
 
 }
