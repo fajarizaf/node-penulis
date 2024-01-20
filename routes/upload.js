@@ -5,7 +5,7 @@ const fs = require('fs')
 
 const upload = app => {
 
-  app.post('/storage/upload', tmpimages, (req,res) => {
+  app.post('/storage/upload', (req,res) => {
   
     var TempFile = req.files.upload
     var TempPathFile = TempFile.path
