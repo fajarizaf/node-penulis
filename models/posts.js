@@ -20,7 +20,17 @@ module.exports = (sequelize, DataTypes) => {
           key: 'id'
         }
     },
-    slugpost: DataTypes.STRING
+    slugpost: DataTypes.STRING,
+    createdAt: {
+      type: DataTypes.DATE,
+      field: 'createdAt', //in table the column name is created_at
+      allowNull: false,
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      field: 'updatedAt', //in table the column name is created_at
+      allowNull: false,
+    },
   }, {});
   posts.associate = function(models) {
     posts.belongsTo(models.catposts, {foreignKey: 'catpost', as: 'categori'})

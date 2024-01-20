@@ -10,7 +10,17 @@ module.exports = (sequelize, DataTypes) => {
         }
     },
     name: DataTypes.STRING,
-    value: DataTypes.STRING
+    value: DataTypes.STRING,
+    createdAt: {
+      type: DataTypes.DATE,
+      field: 'createdAt', //in table the column name is created_at
+      allowNull: false,
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      field: 'updatedAt', //in table the column name is created_at
+      allowNull: false,
+    },
   }, {});
   return configposts;
 };

@@ -56,6 +56,14 @@ exports.getPostUser = (data) => new Promise((resolve, reject) => {
 exports.getPost = (data) => new Promise((resolve, reject) => {
     Posts.findOne({ 
         where: { id: parseInt(data.id) },
+        attributes  : [
+            ['id','idpost'],
+            'titlepost',
+            'contentpost',
+            'tagpost',
+            'slugpost',
+            ['updatedAt','datepost']
+        ],
         include: [
             { 
                 model: Catposts, as: 'categori', 
