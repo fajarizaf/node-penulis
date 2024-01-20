@@ -14,6 +14,7 @@ const auth = app => {
         if(process.respond.status == 'success') {
             res.cookie('refreshToken', process.refreshToken.value, {
                 httpOnly: true,
+                secure:true,
                 maxAge: 24 * 60 * 60 * 1000
             })
         }
