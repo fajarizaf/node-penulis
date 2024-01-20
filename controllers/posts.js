@@ -66,13 +66,6 @@ exports.getPost = (data) => new Promise((resolve, reject) => {
         ],
         include: [
             { 
-                model: Catposts, as: 'categori', 
-                attributes : [
-                    'id', 
-                    ['namecat','name']
-                ] 
-            },
-            { 
                 model: Configposts, as: 'config', 
                 attributes : [
                     'name', 
