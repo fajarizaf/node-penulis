@@ -9,7 +9,7 @@ const cors = require('cors')
 
 app.use(express.static('public'))
 
-app.use(cors({credentials:true, origin:[process.env.REACT_APP_URL_ALLOWED_1]}))
+app.use(cors({credentials:true, origin:[process.env.CORS_LOCAL,process.env.CORS_STAGING,process.env.CORS_PROD]}))
 
 app.use(bodyParser.json())
 app.use(cookieParser())
