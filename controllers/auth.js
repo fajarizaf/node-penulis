@@ -126,7 +126,7 @@ exports.rtoken = (data) => new Promise((resolve, reject) => {
             resolve(convertToJson({status:"failed",respond:"no valid token"}))
         } else {
             // verifikasi existing refreshToken
-            jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, decoded) => {
+            jwt.verify(refreshToken, '456wrwsdfrthdffghxcbxdfgeertetxcvcvsdfgeerrt', (err, decoded) => {
                 if(err) {
                     resolve(convertToJson({status:"failed",respond:"failed token verification"}))
                 } else {
