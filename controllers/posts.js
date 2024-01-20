@@ -62,10 +62,6 @@ exports.getPost = (data) => new Promise((resolve, reject) => {
             },
             { 
                 model: Configposts, as: 'config', 
-                attributes : [
-                    'name', 
-                    'value',
-                ] 
             }
         ]
     })
